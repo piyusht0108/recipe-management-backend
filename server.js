@@ -17,7 +17,10 @@ app.use((err, req, res, next) => {
 });
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/recipe-app', )
+mongoose.connect('mongodb://localhost:27017/recipe-app',{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+} )
 .then(() => console.log('MongoDB connected successfully'))
 .catch(err => {
   console.error('MongoDB connection error:', err);
